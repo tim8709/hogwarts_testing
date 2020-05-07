@@ -1,4 +1,4 @@
-from web.page_object.page.main import Main
+from web.page_object.page.index import Main
 
 
 class TestRegister():
