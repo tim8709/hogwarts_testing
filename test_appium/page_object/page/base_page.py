@@ -14,8 +14,7 @@ class BasePage:
 
     def find(self, by, locator=None):
         try:
-            element = self._driver.find_element(*by) if isinstance(by, tuple) else self._driver.find_element(by,
-                                                                                                               locator)
+            element = self._driver.find_element(*by) if isinstance(by, tuple) else self._driver.find_element(by, locator)
             self._error_cont = 0
             return element
         except Exception as e:
