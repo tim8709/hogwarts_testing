@@ -12,6 +12,7 @@ class TestDebug():
         # 此处的端口号要与chrome调试模式设置的端口号相同
         chrome_opts.debugger_address = "127.0.0.1:9222"
         self.driver = webdriver.Chrome(options=chrome_opts)
+        self.driver.get("https://work.weixin.qq.com")
 
     def teardown(self):
         # self.driver.quit()
@@ -32,3 +33,5 @@ class TestDebug():
             if "expiry" in cookie.keys():
                 cookie.pop("expiry")
             self.driver.add_cookie(cookie)
+        self.driver.get("https://work.weixin.qq.com/wework_admin/frame#index")
+        self.driver.find_element_by_css_selector(".index_service_cnt_itemWrap:nth-child(1)").click()
