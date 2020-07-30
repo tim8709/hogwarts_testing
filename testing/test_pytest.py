@@ -1,6 +1,6 @@
 import yaml
 
-from python.calc import Calc
+from calc.calc import Calc
 import pytest
 
 
